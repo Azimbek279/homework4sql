@@ -3279,12 +3279,12 @@ select country,count(*) as number from customer
 group by country
 order by number desc ;
 -- - 17.Найти общую сумму стоимости заказов и количество заказов по каждому клиенту (customer_id). Отсортировать по сумме
-select customer_id, round(sum(total_amount)),count(customer_id) from orders group by customer_id
+select customer_id as client, sum(total_amount) as SUMMA,count(customer_id) as NUMER from orders group by customer_id
 order by sum(total_amount);
 -- - 18.Найти общую сумму стоимости заказов и количество заказов по каждому клиенту (customer_id), у которых общее количество заказов больше 20ти
-select customer_id, sum(total_amount),count(customer_id) from orders group by customer_id
+select customer_id as client, sum(total_amount) as summa_Price,count(customer_id) as ClientId from orders group by customer_id
 having count(customer_id) >20;
 -- - 19.Найти количество городов в каждой из стран клиентов
-select count(city),country from customer group by country;
+select country,count(city) as Number_city from customer group by country;
 
 
